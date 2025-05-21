@@ -4,12 +4,28 @@ import viteLogo from '/vite.svg'
 import './App.css'
 import 'bootstrap/dist/css/bootstrap.min.css';
 
+
+    <>
+      import { useState } from 'react'
 function App() {
-  const [count, setCount] = useState(0)
+  const [users, setUsers] = useState([
+    { id: 1, name: "john", email: "john@gmail.com" },
+    { id: 2, name: "doe", email: "doe@gmail.com" },
+  ])
 
   return (
     <>
-      
+      {users.map((user) => (
+        <ol key={user.id}>
+          <li>{user.name}</li>
+          <li>{user.email}</li>
+        </ol>
+      ))}
+    </>
+  );
+}
+
+export default App;
     </>
   )
 }
